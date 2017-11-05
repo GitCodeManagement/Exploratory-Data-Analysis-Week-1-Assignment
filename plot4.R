@@ -4,7 +4,7 @@ quickRead <- fread(file = "household_power_consumption.txt",sep=";",header=TRUE,
 twoDaysData <- subset(quickRead,Date=='1/2/2007'| Date=='2/2/2007')
 twoDaysData$Date <- dmy_hms(paste(twoDaysData$Date,twoDaysData$Time))
 png(filename = "plot4.png",width = 480, height = 480, units = "px")
-par(mfrow=c(2,2),mar=c(4,4,0.5,0.5))
+par(mfrow=c(2,2),mar=c(4,4,1,1))
 #plot1  - start
 plot(twoDaysData$Date, twoDaysData$Global_active_power,type="n",xlab="",ylab="Global Active Power")
 lines(twoDaysData$Date,twoDaysData$Global_active_power)
